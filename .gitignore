@@ -1,0 +1,4 @@
+# design-tool scratch: screenshots, research, local browser binaries
+.hallmark/
+.claude/
+node_modules/

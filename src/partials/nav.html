@@ -1,0 +1,25 @@
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="container">
+    <nav class="site-nav__bar" aria-label="Main">
+      <ul class="site-nav__start">
+        <li><a href="royal-weddings.html"{{if current=wed: aria-current="page"}}>Royal weddings</a></li>
+        <li><a href="exhibitions.html"{{if current=exh: aria-current="page"}}>Exhibitions</a></li>
+        <li><a href="corporate-events.html"{{if current=corp: aria-current="page"}}>Corporate events</a></li>
+      </ul>
+      <a class="wordmark" href="index.html" aria-label="Vijyapana Events, home"><b>Vijyapana</b><span>Events</span></a>
+      <div class="site-nav__end">
+        <a class="link-work" href="index.html#work">Our work</a>
+        <a class="btn btn--small" href="#brief">Plan an event</a>
+        <button class="btn btn--small menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      </div>
+    </nav>
+    <nav class="menu-panel" id="menu" aria-label="Menu" hidden>
+      <a href="royal-weddings.html">Royal weddings</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="corporate-events.html">Corporate events</a>
+      <a href="index.html#work">Our work</a>
+      <a class="btn" href="#brief">Plan an event</a>
+    </nav>
+  </div>
+</header>
