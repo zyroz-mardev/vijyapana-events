@@ -3,7 +3,7 @@
 <head>
 <!-- @partial head title="Vijyapana Events | Royal weddings, exhibitions and corporate events in Kanpur" description="Vijyapana Events, the event management arm of Vijyapana in Kanpur, plans and runs royal weddings, exhibitions and corporate events, with the invitations, stage screens, films and gift hampers made in-house." -->
 </head>
-<!-- Placeholder content: the events, names, figures, quotes and prices on this site are sample data. Replace before launch. The Kanpur address, phone, email and hours are from vijyapana.com. -->
+<!-- Placeholder content: the events, names, figures, quotes and prices on this site are sample data. Replace before launch. The Kanpur address, phone, email and hours are from vijyapana.com. Venue names are real places used as examples: confirm them with the venues before launch. -->
 <body>
 <canvas class="air" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
@@ -11,13 +11,13 @@
 <!-- @partial nav current="home" -->
 
 <main id="main">
-  <!-- Hero: the three cards -->
+  <!-- Hero: one print, turning through the three occasions -->
   <section class="hero fade-foot" data-air aria-labelledby="hero-title">
     <div class="container hero__grid">
       <div class="hero__text">
-        <h1 id="hero-title" class="lines-in h1--big">
-          <span class="line" style="--i:0"><span>Every detail.</span></span>
-          <span class="line" style="--i:1"><span>One roof.</span></span>
+        <h1 id="hero-title" class="lines-in">
+          <span class="line" style="--i:0"><span>Big days,</span></span>
+          <span class="line" style="--i:1"><span>built in Kanpur.</span></span>
         </h1>
         <p class="lead" data-reveal style="--i:4">Our own studios make the invitations, stage screens, films and gift hampers.</p>
         <div class="actions" data-reveal style="--i:5">
@@ -26,43 +26,20 @@
         </div>
       </div>
 
-      <div class="hero__visual hero__visual--deck">
+      <div class="hero__visual hero__visual--cycle">
         <figure class="print stock" style="margin:0">
-          <div class="print__frame" data-slot="hero" data-print data-alt="Your own event photograph, portrait, at least 1600px tall">
-            <img data-photo="W3" data-key="wed" class="is-shown" alt="Carved balconies and arched windows of City Palace, Udaipur, in daylight" sizes="(min-width: 60rem) 460px, 90vw" style="object-position: 50% 40%" fetchpriority="high">
-            <img data-photo="E6" data-key="exh" alt="A long exhibition pavilion with a pleated roof and visitors arriving" sizes="(min-width: 60rem) 460px, 90vw" style="object-position: 40% 50%">
-            <img data-photo="C2" data-key="corp" alt="A full auditorium during a keynote" sizes="(min-width: 60rem) 460px, 90vw" style="object-position: 55% 50%">
+          <div class="print__frame" data-slot="hero" data-print data-cycle data-alt="Your own event photograph, portrait, at least 1600px tall">
+            <img data-photo="W3" data-key="wed" class="is-shown" alt="Carved balconies and arched windows of City Palace, Udaipur, in daylight" sizes="(min-width: 60rem) 520px, 90vw" style="object-position: 50% 40%" fetchpriority="high">
+            <img data-photo="E6" data-key="exh" alt="A long exhibition pavilion with a pleated roof and visitors arriving" sizes="(min-width: 60rem) 520px, 90vw" style="object-position: 40% 50%">
+            <img data-photo="C2" data-key="corp" alt="A full auditorium during a keynote" sizes="(min-width: 60rem) 520px, 90vw" style="object-position: 55% 50%">
           </div>
           <figcaption class="print__meta">
             <span class="pencil" data-print-meta="wed">City Palace, Udaipur</span>
-            <span class="pencil" data-print-meta="exh" hidden>Exhibition pavilion, New Delhi</span>
-            <span class="pencil" data-print-meta="corp" hidden>Keynote, 1,200 seats</span>
+            <span class="pencil" data-print-meta="exh" hidden>An exhibition pavilion</span>
+            <span class="pencil" data-print-meta="corp" hidden>A keynote, full house</span>
             <span>Vijyapana Events</span>
           </figcaption>
         </figure>
-
-        <div class="deck" aria-label="Choose an occasion">
-          <a class="card card--wed stock" href="royal-weddings.html" data-show="wed" aria-label="Royal weddings">
-            <span class="card__stain" aria-hidden="true"></span>
-            <span class="card__top"><span>Royal weddings</span><span aria-hidden="true">I</span></span>
-            <span class="card__body" aria-hidden="true"><em>Together with their families</em><strong>Aanya &amp; Vir</strong><em>request your company in Udaipur</em></span>
-            <span class="card__foot" aria-hidden="true"><span>Invitation</span></span>
-          </a>
-          <a class="card card--exh stock" href="exhibitions.html" data-show="exh" aria-label="Exhibitions">
-            <span class="card__stain" aria-hidden="true"></span>
-            <span class="card__perf" aria-hidden="true"></span>
-            <span class="card__top"><span>Exhibitions</span><span aria-hidden="true">II</span></span>
-            <span class="card__body" aria-hidden="true"><em>India Craft Week</em><strong>Hall 3</strong><em>Stall C-14, 18&nbsp;sq&nbsp;m</em></span>
-            <span class="card__foot" aria-hidden="true"><span>Stall pass</span></span>
-          </a>
-          <a class="card card--corp stock" href="corporate-events.html" data-show="corp" aria-label="Corporate events">
-            <span class="card__stain" aria-hidden="true"></span>
-            <span class="card__slot" aria-hidden="true"></span>
-            <span class="card__top"><span>Corporate events</span><span aria-hidden="true">III</span></span>
-            <span class="card__body" aria-hidden="true"><em>Annual sales summit</em><strong>No. 0417</strong><em>Day one of two</em></span>
-            <span class="card__foot" aria-hidden="true"><span>Delegate badge</span></span>
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -90,7 +67,7 @@
   <section class="section paper" id="occasions" aria-labelledby="occ-title">
     <div class="container">
       <div class="head head--split">
-        <h2 id="occ-title" data-reveal>Three kinds of occasion</h2>
+        <h2 id="occ-title" data-reveal>Three ways to fill a room</h2>
         <p class="lead" data-reveal style="--i:1">Pull a strip. Each occasion has its own team, its own suppliers and its own page.</p>
       </div>
       <div class="g12 occ" data-tabs>
@@ -142,7 +119,7 @@
   <section class="section paper" aria-labelledby="how-title">
     <div class="container">
       <div class="head">
-        <h2 id="how-title" data-reveal>Five promises we keep</h2>
+        <h2 id="how-title" data-reveal>Five promises. No fine print.</h2>
       </div>
       <div class="g12 chapter" data-chapter>
         <div class="chapter__pin">
@@ -194,7 +171,7 @@
   <section class="section paper" id="work" aria-labelledby="work-title" data-work>
     <div class="container">
       <div class="head head--split">
-        <h2 id="work-title" data-reveal>Events our team has run</h2>
+        <h2 id="work-title" data-reveal>Rooms we have filled</h2>
         <div class="head__aside work__filter" role="group" aria-label="Filter events">
           <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="chip" type="button" data-filter="wed" aria-pressed="false">Royal weddings</button>
@@ -207,10 +184,10 @@
           <div class="work__head" aria-hidden="true"><span>Event</span><span>Occasion</span><span>Place</span><span>Year</span><span>Size</span></div>
           <ul class="work__list">
             <li data-kind="wed" data-key="r1" data-place="City Palace, Udaipur"><a class="work__row" href="royal-weddings.html"><b>Aanya and Vir</b><span>Royal wedding</span><span>City Palace, Udaipur</span><span class="num">2025</span><span class="num">860 guests</span></a></li>
-            <li data-kind="exh" data-key="r2" data-place="Bharat Mandapam, New Delhi"><a class="work__row" href="exhibitions.html"><b>India Craft Week</b><span>Exhibition</span><span>Bharat Mandapam, New Delhi</span><span class="num">2025</span><span class="num">214 stalls</span></a></li>
-            <li data-kind="corp" data-key="r3" data-place="Jio World Centre, Mumbai"><a class="work__row" href="corporate-events.html"><b>Kesari Motors summit</b><span>Corporate</span><span>Jio World Centre, Mumbai</span><span class="num">2025</span><span class="num">1,200 delegates</span></a></li>
+            <li data-kind="exh" data-key="r2" data-place="Indira Gandhi Pratishthan, Lucknow"><a class="work__row" href="exhibitions.html"><b>Awadh Craft Mela</b><span>Exhibition</span><span>Indira Gandhi Pratishthan, Lucknow</span><span class="num">2025</span><span class="num">84 stalls</span></a></li>
+            <li data-kind="corp" data-key="r3" data-place="The Centrum, Lucknow"><a class="work__row" href="corporate-events.html"><b>Kesari Motors dealer meet</b><span>Corporate</span><span>The Centrum, Lucknow</span><span class="num">2025</span><span class="num">400 delegates</span></a></li>
             <li data-kind="wed" data-key="r4" data-place="Umaid Bhawan, Jodhpur"><a class="work__row" href="royal-weddings.html"><b>Meher and Kabir</b><span>Royal wedding</span><span>Umaid Bhawan, Jodhpur</span><span class="num">2024</span><span class="num">540 guests</span></a></li>
-            <li data-kind="exh" data-key="r5" data-place="JECC, Jaipur"><a class="work__row" href="exhibitions.html"><b>Jaipur Gem Fair</b><span>Exhibition</span><span>JECC, Jaipur</span><span class="num">2024</span><span class="num">380 stalls</span></a></li>
+            <li data-kind="exh" data-key="r5" data-place="Narula Convention Centre, Kanpur"><a class="work__row" href="exhibitions.html"><b>Kanpur Leather Expo</b><span>Exhibition</span><span>Narula Convention Centre, Kanpur</span><span class="num">2024</span><span class="num">120 stalls</span></a></li>
             <li data-kind="corp" data-key="r6" data-place="Umaid Bhawan, Jodhpur"><a class="work__row" href="corporate-events.html"><b>Northline Pharma awards</b><span>Corporate</span><span>Umaid Bhawan, Jodhpur</span><span class="num">2024</span><span class="num">640 guests</span></a></li>
             <li data-kind="wed" data-key="r7" data-place="Taj Lake Palace, Udaipur"><a class="work__row" href="royal-weddings.html"><b>Ishita and Arjun</b><span>Royal wedding</span><span>Taj Lake Palace, Udaipur</span><span class="num">2023</span><span class="num">300 guests</span></a></li>
             <li data-kind="exh" data-key="r8" data-place="Jawahar Kala Kendra, Jaipur"><a class="work__row" href="exhibitions.html"><b>Monsoon Art Fair</b><span>Exhibition</span><span>Jawahar Kala Kendra, Jaipur</span><span class="num">2023</span><span class="num">96 galleries</span></a></li>
@@ -259,7 +236,7 @@
     </div>
   </section>
 
-  <!-- @partial brief occ="wed" phrase="A royal wedding" cityname="Kanpur" city="kanpur" monthname="February" month="feb" people="600" peoplefmt="600" unit="guests" -->
+  <!-- @partial brief occ="wed" phrase="A royal wedding" cityname="Kanpur" people="600" peoplefmt="600" unit="guests" -->
 </main>
 
 <!-- @partial footer -->

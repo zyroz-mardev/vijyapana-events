@@ -72,6 +72,10 @@ Hero headline rises line by line · cards deal in, tilt and sheen · air drifts,
 
 Every figure, event name, family and client name, quote, price, capacity, address, phone number (+91 141 655 0190) and email (hello@vijayapna.in) is invented for the mock-up, as requested. Real venues are named as places only; the events "held" there are fictional. Publishing invented results or quotes on the live site would mislead your clients, so swap these for real ones first.
 
+Local venues added in round 2 (Narula Convention Centre and Royal Cliff in Kanpur; Indira Gandhi Pratishthan and The Centrum in Lucknow) are real places used as examples. Confirm each with the venue before launch, and change any you do not work with.
+
+The photo credits sit behind a "Photo credits" toggle in the footer. Keep that toggle while any Wikimedia Commons photo is on the page: their licences require the credit. The build lists only the Commons photos still in src/, so the list shrinks as your own photos replace them.
+
 ## 6. Photographs
 
 Real photographs from Wikimedia Commons (CC BY / CC BY-SA / CC0), hot-linked at standard sizes and credited in every footer: Udaipur City Palace, Umaid Bhawan Palace, Taj Lake Palace, Amer Fort, mehndi, kanyadaan, dhol players, diyas and rangoli, lotus-bud décor, India Art Fair, India International Trade Fair, conference audiences and stands. Each sits in a swappable slot so your own event photos can replace them.

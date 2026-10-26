@@ -45,18 +45,9 @@
   }), { rootMargin: '0px 0px -10% 0px' });
   $$('[data-reveal], .settle, .occ__rail, .handled__rows li, .plan').forEach((el) => seen.observe(el));
 
-  /* hero lines and the deck wait for the fonts */
+  /* hero lines wait for the fonts */
   const ready = (document.fonts?.ready ?? Promise.resolve()).then(() => new Promise((r) => setTimeout(r, 80)));
-  ready.then(() => {
-    $$('.lines-in').forEach((el) => el.classList.add('is-in'));
-    const deck = $('.deck');
-    if (deck) {
-      const cards = $$('.card', deck);
-      cards.forEach((c, i) => (c.style.transitionDelay = `${280 + i * 110}ms`));
-      deck.classList.add('is-dealt');
-      setTimeout(() => cards.forEach((c) => (c.style.transitionDelay = '')), 1400);
-    }
-  });
+  ready.then(() => $$('.lines-in').forEach((el) => el.classList.add('is-in')));
 
   /* ---------- the air: a slow WebGL field behind the hero and the close ---------- */
   const air = (() => {
@@ -126,32 +117,25 @@
     return api;
   })();
 
-  /* ---------- the three cards ---------- */
-  const deck = $('.deck');
-  if (deck) {
-    const prints = $$('[data-print] > img');
-    const metas = $$('[data-print-meta]');
-    const show = (kind) => {
-      prints.forEach((img) => img.classList.toggle('is-shown', img.dataset.key === kind));
+  /* ---------- the hero print, turning through the three occasions ---------- */
+  const cycle = $('[data-cycle]');
+  if (cycle && !reduced) {
+    const prints = $$(':scope > img[data-key]', cycle);
+    const metas = $$('[data-print-meta]', cycle.closest('figure'));
+    let at = 0, timer = 0, inView = true;
+    const show = (i) => {
+      at = i;
+      const kind = prints[i].dataset.key;
+      prints.forEach((img, j) => img.classList.toggle('is-shown', j === i));
       metas.forEach((m) => (m.hidden = m.dataset.printMeta !== kind));
-      $$('.card', deck).forEach((c) => c.classList.toggle('is-active', c.dataset.show === kind));
       air?.tint(kind);
     };
-    $$('.card', deck).forEach((card) => {
-      card.addEventListener('pointerenter', () => show(card.dataset.show));
-      card.addEventListener('focus', () => show(card.dataset.show));
-      if (finePointer && !reduced) {
-        card.addEventListener('pointermove', (e) => {
-          const r = card.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.setProperty('--ry', `${(x * 16).toFixed(2)}deg`);
-          card.style.setProperty('--rx', `${(-y * 12).toFixed(2)}deg`);
-          card.style.setProperty('--mx', `${((x + 0.5) * 100).toFixed(1)}%`);
-        });
-        card.addEventListener('pointerleave', () => { card.style.setProperty('--ry', '0deg'); card.style.setProperty('--rx', '0deg'); });
-      }
-    });
-    deck.addEventListener('pointerleave', () => { $$('.card', deck).forEach((c) => c.classList.remove('is-active')); air?.tint(document.body.dataset.occ); });
+    const run = () => {
+      clearInterval(timer);
+      if (inView && !document.hidden && prints.length > 1) timer = setInterval(() => show((at + 1) % prints.length), 5000);
+    };
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; run(); }).observe(cycle);
+    document.addEventListener('visibilitychange', run);
   }
 
   /* ---------- statement: words ink in as it scrolls past ---------- */
@@ -263,12 +247,11 @@
     const press = (el, text) => { if (!el || el.textContent === text) return; el.textContent = text; if (!reduced) { el.classList.remove('is-pressed'); void el.offsetWidth; el.classList.add('is-pressed'); } };
     const sync = () => {
       const occ = $('input[name="occasion"]:checked', form);
-      const month = $('input[name="month"]:checked', form);
-      const city = $('select[name="city"]', form);
+      const city = form.elements.city.value.trim(), when = form.elements.date.value.trim();
       const n = fmt.format(Number(range.value));
       press(out('occasion'), occ?.dataset.phrase || 'An event');
-      press(out('city'), city.value === 'Somewhere else' ? 'a city we will choose together' : city.value);
-      press(out('month'), month?.dataset.long || 'a month to be fixed');
+      press(out('city'), city || 'a city to be chosen');
+      press(out('when'), when || 'date to be fixed');
       press(out('people'), n);
       press(out('unit'), occ?.dataset.unit || 'guests');
       if (rangeOut) rangeOut.textContent = n;

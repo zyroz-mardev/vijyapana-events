@@ -1,8 +1,8 @@
 <section class="brief section section--l fade-head" id="brief" data-air aria-labelledby="brief-title">
   <div class="container g12 brief__grid">
     <div class="brief__intro" data-reveal>
-      <h2 id="brief-title">Start with four details</h2>
-      <p class="lead">Occasion, city, month and how many people. Your coordinator replies within one working day, by name.</p>
+      <h2 id="brief-title">Tell us four things. We’ll plan the rest.</h2>
+      <p class="lead">Occasion, city, date and how many people. Your coordinator replies within one working day, by name.</p>
       <ul class="brief__contact">
         <li><a class="link" href="mailto:support@vijyapana.com">support@vijyapana.com</a></li>
         <li><a class="link" href="tel:+917080210333">+91&nbsp;70802&nbsp;10333</a></li>
@@ -12,7 +12,7 @@
     </div>
     <div class="brief__card stock stock--framed" data-reveal>
       <div class="brief__press"><b>Vijyapana Events</b><span>A brief, in your words</span></div>
-      <p class="brief__sentence" aria-live="polite"><span data-out="occasion">{{phrase}}</span> in <span data-out="city">{{cityname}}</span>, in <span data-out="month">{{monthname}}</span>, for about <span data-out="people">{{peoplefmt}}</span> <span data-out="unit">{{unit}}</span>.</p>
+      <p class="brief__sentence" aria-live="polite"><span data-out="occasion">{{phrase}}</span> in <span class="keep"><span data-out="city">{{cityname}}</span>,</span> <span class="keep"><span data-out="when">date to be fixed</span>,</span> for about <span data-out="people">{{peoplefmt}}</span> <span class="keep"><span data-out="unit">{{unit}}</span>.</span></p>
       <form data-brief action="mailto:support@vijyapana.com" method="post" enctype="text/plain" novalidate>
         <fieldset>
           <legend>Occasion</legend>
@@ -25,43 +25,18 @@
         <div class="ruled-row">
           <div>
             <label class="field__label" for="b-city">City</label>
-            <select class="ruled" id="b-city" name="city">
-              <option{{if city=kanpur: selected}}>Kanpur</option>
-              <option>Lucknow</option>
-              <option>Varanasi</option>
-              <option>Agra</option>
-              <option{{if city=udaipur: selected}}>Udaipur</option>
-              <option{{if city=jaipur: selected}}>Jaipur</option>
-              <option>Jodhpur</option>
-              <option>Jaisalmer</option>
-              <option{{if city=delhi: selected}}>New Delhi</option>
-              <option{{if city=mumbai: selected}}>Mumbai</option>
-              <option>Goa</option>
-              <option>Somewhere else</option>
-            </select>
+            <input class="ruled" id="b-city" name="city" type="text" value="{{cityname}}" autocomplete="address-level2">
           </div>
           <div>
-            <label class="field__label" for="b-people">About how many people</label>
-            <div class="range"><input type="range" id="b-people" name="people" min="50" max="2000" step="50" value="{{people}}"><output for="b-people">{{peoplefmt}}</output></div>
+            <label class="field__label" for="b-date">Date, or roughly when</label>
+            <input class="ruled" id="b-date" name="date" type="text" autocomplete="off" aria-describedby="b-date-hint">
+            <p class="field__hint" id="b-date-hint">For example, 14 February 2027, or just the month.</p>
           </div>
         </div>
-        <fieldset>
-          <legend>Month</legend>
-          <div class="press-set press-set--months">
-            <input type="radio" id="m1" name="month" value="January" data-long="January"><label for="m1">Jan</label>
-            <input type="radio" id="m2" name="month" value="February" data-long="February"{{if month=feb: checked}}><label for="m2">Feb</label>
-            <input type="radio" id="m3" name="month" value="March" data-long="March"{{if month=mar: checked}}><label for="m3">Mar</label>
-            <input type="radio" id="m4" name="month" value="April" data-long="April"><label for="m4">Apr</label>
-            <input type="radio" id="m5" name="month" value="May" data-long="May"><label for="m5">May</label>
-            <input type="radio" id="m6" name="month" value="June" data-long="June"><label for="m6">Jun</label>
-            <input type="radio" id="m7" name="month" value="July" data-long="July"><label for="m7">Jul</label>
-            <input type="radio" id="m8" name="month" value="August" data-long="August"><label for="m8">Aug</label>
-            <input type="radio" id="m9" name="month" value="September" data-long="September"><label for="m9">Sep</label>
-            <input type="radio" id="m10" name="month" value="October" data-long="October"><label for="m10">Oct</label>
-            <input type="radio" id="m11" name="month" value="November" data-long="November"{{if month=nov: checked}}><label for="m11">Nov</label>
-            <input type="radio" id="m12" name="month" value="December" data-long="December"><label for="m12">Dec</label>
-          </div>
-        </fieldset>
+        <div>
+          <label class="field__label" for="b-people">About how many people</label>
+          <div class="range"><input type="range" id="b-people" name="people" min="50" max="2000" step="50" value="{{people}}"><output for="b-people">{{peoplefmt}}</output></div>
+        </div>
         <div class="ruled-row">
           <div><label class="field__label" for="b-name">Your name</label><input class="ruled" id="b-name" name="name" type="text" autocomplete="name" required></div>
           <div><label class="field__label" for="b-contact">Email or phone</label><input class="ruled" id="b-contact" name="contact" type="text" autocomplete="email" required></div>
